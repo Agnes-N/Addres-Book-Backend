@@ -9,5 +9,12 @@ export default (sequelize, DataTypes) => {
     },
     {},
   );
+  User.associate = (models) => {
+    User.hasMany(models.Contacts, {
+      foreignKey: 'userId',
+      as: 'contact',
+      onDelete: 'CASCADE',
+    });
+  };
   return User;
 };
