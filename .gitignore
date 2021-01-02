@@ -1,0 +1,7 @@
+.vscode
+/server/logs
+node_modules
+.env
+.github
+package-lock.json
+ 
