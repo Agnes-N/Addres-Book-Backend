@@ -1,7 +1,7 @@
 import passport from 'passport';
 import passwordHelper from '../helpers/passwordHelper';
-import authHelper from '../helpers/userHelper';
 import TokenHelper from '../helpers/tokenHelper';
+import UserHelper from '../helpers/userHelper';
 
 /**
  * This class contains all methods
@@ -28,7 +28,7 @@ class authController {
         email,
         password: hashedPassword
       };
-      const user = await authHelper.registerUser(data);
+      const user = await UserHelper.registerUser(data);
       if (user) {
         const token = await TokenHelper.generateToken({
           id: user.id,

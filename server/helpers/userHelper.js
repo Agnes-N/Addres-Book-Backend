@@ -4,7 +4,7 @@ import models from '../sequelize/models';
  * This class contains
  * methods for handling user-related operations.
  */
-class authHelper {
+class UserHelper {
   /**
    * This method registers a user.
    * @param {object} data user information.
@@ -40,4 +40,4 @@ class authHelper {
   }
 }
 
-export default authHelper;
+export default UserHelper;
