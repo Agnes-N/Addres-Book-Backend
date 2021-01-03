@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "server": "nodemon --exec babel-node server/index.js",
+    "start": "babel-node server/index.js",
     "lint": "eslint --fix ./server",
     "migrate": "npx sequelize-cli db:migrate",
     "seed": "npx sequelize-cli db:seed:all",
