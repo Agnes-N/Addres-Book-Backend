@@ -55,7 +55,7 @@ class checkUser {
       if (contactFound.userId === undefined) {
         return res.status(404).json({
           status: 404,
-          error: 'No such contact found!'
+          error: 'You have not created any contact yet!'
         });
       } if (contactFound.userId !== id) {
         return res.status(404).json({
@@ -67,7 +67,7 @@ class checkUser {
     } catch (error) {
       return res.status(404).json({
         status: 404,
-        message: 'This contact does not exit.'
+        message: 'You have not created any contact yet!'
       });
     }
   }
