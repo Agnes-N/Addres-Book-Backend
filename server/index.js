@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import express from 'express';
 import passport from 'passport';
 import bodyParser from 'body-parser';
+import cors from 'cors';
 import route from './routes/index';
 import db from './sequelize/models';
 import logger from './config/winston';
@@ -19,6 +20,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const port = process.env.PORT || 3000;
 const basePath = '/api/v1';
 
+app.use(cors());
 app.use(passport.initialize());
 app.use(passport.session());
 passportConfig(passport);
@@ -36,7 +38,7 @@ app.use(basePath, statusLogger(route));
 app.get('**', (req, res) => {
   res.status(200).send({
     status: 200,
-    message: 'You are Welcome to Easyads.'
+    message: 'You are Welcome to Iconic Address Book.'
   });
 });
 
